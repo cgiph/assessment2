@@ -204,6 +204,15 @@
         const v=data[key];
         html+=`<p><strong>${key}</strong>: ${v.score}/${v.total}<br>${v.notes.join(' ')}</p>`;
       }
+
+      // Collecting all answers for PDF export
+      html += `<h3>All Answers:</h3>`;
+      html += `<p><strong>A1 Test 1 Answers:</strong> Q1: ${document.getElementById('a1q1').value}, Q2: ${document.getElementById('a1q2').value}</p>`;
+      html += `<p><strong>A2 Test 1 Answers:</strong> Q1: ${document.getElementById('a2q1').value}, Q2: ${document.getElementById('a2q2').value}</p>`;
+      html += `<p><strong>B1 Test 1 Answers:</strong> Q1: ${document.getElementById('b1q1').value}, Q2: ${document.getElementById('b1q2').value}</p>`;
+      html += `<p><strong>Essay:</strong> ${document.getElementById('essay').value}</p>`;
+      html += `<p><strong>Email:</strong> ${document.getElementById('email').value}</p>`;
+
       const printWin=window.open('', '_blank');
       printWin.document.write(`<html><head><title>${name} Results</title></head><body>${html}</body></html>`);
       printWin.document.close();
