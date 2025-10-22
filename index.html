@@ -126,7 +126,7 @@
 
     function highestReadingLevel(a1,a2,b1){
       const scores={A1:a1,A2:a2,B1:b1};
-      let highest='A1',max=scores.A1;
+      let highest='A2',max=scores.A2;
       for(const lvl in scores){if(scores[lvl]>max){max=scores[lvl];highest=lvl;}}
       return highest;
     }
@@ -172,6 +172,7 @@
   </script>
 </body>
 </html>
+
 
 
 
