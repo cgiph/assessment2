@@ -3,240 +3,172 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Skilled-Jobs English: Reading & Writing Tests</title>
+  <title>Skilled-Jobs English (Managers) — Reading & Writing Tests</title>
   <style>
-    :root{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
-    body{max-width:1000px;margin:28px auto;padding:20px;line-height:1.45;color:#111}
+    :root{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;}
+    body{max-width:1000px;margin:28px auto;padding:20px;line-height:1.45;color:#111;background:#fff}
     header{display:flex;align-items:center;gap:16px;justify-content:space-between}
-    h1{font-size:1.6rem;margin:0}
+    h1{font-size:1.5rem;margin:0}
     .name-field{font-size:1rem;border:1px solid #cbd5e1;border-radius:8px;padding:6px;width:250px}
     .level{border:1px solid #e2e8f0;border-radius:10px;padding:16px;margin:18px 0;background:#fbfdff}
     h2{margin-top:0}
     .passage{background:#fff;padding:12px;border-radius:8px;border:1px solid #eef2f7;margin-bottom:12px}
-    .questions{margin-top:8px}
     .question{margin:10px 0;padding:10px;border-left:3px solid #c7d2fe;background:#fcfcff;border-radius:6px}
     label{display:block;cursor:pointer}
-    .short-answer{width:100%;min-height:48px}
-    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .short-answer{width:100%;min-height:48px;padding:8px;border:1px solid #e2e8f0;border-radius:6px}
     button{background:#2563eb;color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
-    .result{margin-top:12px;padding:10px;border-radius:8px;background:#f8fafc;border:1px solid #e6eef8}
-    .rubric{font-size:0.95rem;background:#fff;padding:10px;border-radius:8px;border:1px dashed #e2e8f0;margin-top:8px}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .result{margin-top:10px;padding:10px;border-radius:8px;background:#f8fafc;border:1px solid #e6eef8}
     textarea{width:100%;min-height:140px;padding:8px;border-radius:8px;border:1px solid #e6eef8}
-    .meta{font-size:0.9rem;color:#334155}
     footer{margin-top:28px;font-size:0.9rem;color:#475569}
-    .hidden{display:none;}
-    #adminControls{margin-top:20px;border-top:1px solid #e2e8f0;padding-top:10px;}
   </style>
 </head>
 <body>
   <header>
-    <h1>Skilled-Jobs English Tests — Reading & Writing</h1>
+    <h1>Skilled-Jobs English (Managers) — Reading & Writing</h1>
     <div>
       <label><strong>Candidate Name:</strong></label>
       <input class="name-field" type="text" id="candidateName" placeholder="Write your full name here">
     </div>
   </header>
 
-  <p class="meta">Instructions for candidates: Complete each reading section and the writing tasks in 30 minutes. Once you click <strong>Submit</strong>, your score and name will be saved below. Only examiners can reset the tests or export results.</p>
+  <p><strong>Instructions:</strong> Complete all sections, then click <em>Export Results to PDF</em>. The file will be saved to your device for sending via email or Messenger.</p>
 
-  <!-- Reading and writing sections -->
-  <div id="testsContainer">
-    <section class="level" id="A1Test1">
-      <h2>A1 Reading Test 1</h2>
-      <div class="passage">John is a welder. He works at a factory. Every day, he wears his safety gloves and helmet. He likes his job because he makes things with his hands.</div>
-      <div class="questions">
-        <div class="question"><label>1. What is John's job?</label><input class="short-answer" id="a1q1"></div>
-        <div class="question"><label>2. Why does he wear safety gloves?</label><input class="short-answer" id="a1q2"></div>
-      </div>
-      <div class="controls"><button id="btnA1T1">Submit A1 Test 1</button></div>
-      <div class="result" id="resultA1T1"></div>
-    </section>
+  <!-- Reading -->
+  <section class="level">
+    <h2>A1 Reading Test</h2>
+    <div class="passage">John works at a factory. Every day, he wears his safety gloves, boots, goggles, and helmet before welding. He likes his job because he assembles things with his hands.</div>
+    <div class="question"><label>1. What is John's job?</label><input class="short-answer" id="a1q1"></div>
+    <div class="question"><label>2. Why does he wear safety gloves?</label><input class="short-answer" id="a1q2"></div>
+    <div class="controls"><button id="btnA1">Submit A1 Test</button></div>
+    <div class="result" id="resultA1"></div>
+  </section>
 
-    <section class="level" id="A2Test1">
-      <h2>A2 Reading Test 1</h2>
-      <div class="passage">Maria is a pastry cook in a hotel kitchen. She starts work at 6 a.m. She prepares dough and bakes bread and cakes for guests. She enjoys learning new recipes from her coworkers.</div>
-      <div class="questions">
-        <div class="question"><label>1. What time does Maria start work?</label><input class="short-answer" id="a2q1"></div>
-        <div class="question"><label>2. What does Maria enjoy at work?</label><input class="short-answer" id="a2q2"></div>
-      </div>
-      <div class="controls"><button id="btnA2T1">Submit A2 Test 1</button></div>
-      <div class="result" id="resultA2T1"></div>
-    </section>
+  <section class="level">
+    <h2>A2 Reading Test</h2>
+    <div class="passage">Maria is a pastry cook in a hotel kitchen. She starts work at 6 a.m. She prepares dough and bakes bread and cakes for guests. She enjoys learning new recipes from her coworkers.</div>
+    <div class="question"><label>1. What time does Maria start work?</label><input class="short-answer" id="a2q1"></div>
+    <div class="question"><label>2. What does Maria enjoy at work?</label><input class="short-answer" id="a2q2"></div>
+    <div class="controls"><button id="btnA2">Submit A2 Test</button></div>
+    <div class="result" id="resultA2"></div>
+  </section>
 
-    <section class="level" id="B1Test1">
-      <h2>B1 Reading Test 1</h2>
-      <div class="passage">Liam is a construction site supervisor. His team works on building new houses. Every morning, he checks the safety rules, assigns workers to different areas, and ensures that equipment is working properly. Good communication is very important in his job.</div>
-      <div class="questions">
-        <div class="question"><label>1. What does Liam do every morning?</label><input class="short-answer" id="b1q1"></div>
-        <div class="question"><label>2. Why is communication important in his job?</label><input class="short-answer" id="b1q2"></div>
-      </div>
-      <div class="controls"><button id="btnB1T1">Submit B1 Test 1</button></div>
-      <div class="result" id="resultB1T1"></div>
-    </section>
+  <section class="level">
+    <h2>B1 Reading Test</h2>
+    <div class="passage">Liam is a construction site supervisor. His team builds new houses. Every morning, he checks safety rules, assigns workers, and ensures equipment is working properly. Good communication is very important in his job.</div>
+    <div class="question"><label>1. What does Liam do every morning?</label><input class="short-answer" id="b1q1"></div>
+    <div class="question"><label>2. Why is communication important in his job?</label><input class="short-answer" id="b1q2"></div>
+    <div class="controls"><button id="btnB1">Submit B1 Test</button></div>
+    <div class="result" id="resultB1"></div>
+  </section>
 
-    <section class="level" id="WritingEssay">
-      <h2>Writing Task: Short Essay</h2>
-      <p>Write about <strong>why safety is important in your job</strong>. Write at least 60 words.</p>
-      <textarea id="essay"></textarea>
-      <div class="controls"><button id="btnEssay">Submit Essay</button></div>
-      <div class="result" id="resultEssay"></div>
-    </section>
+  <!-- Writing -->
+  <section class="level">
+    <h2>Writing Task: Short Essay</h2>
+    <p>Write your idea about this topic: <strong>why safety is important in your job</strong>. Write at least 80 words.</p>
+    <textarea id="essay"></textarea>
+    <div class="controls"><button id="btnEssay">Submit Essay</button></div>
+    <div class="result" id="resultEssay"></div>
+  </section>
 
-    <section class="level" id="WritingEmail">
-      <h2>Writing Task: Email</h2>
-      <p>Write an email to your manager to request one day off because you have a personal appointment. Be polite and include the reason and the date.</p>
-      <textarea id="email"></textarea>
-      <div class="controls"><button id="btnEmail">Submit Email</button></div>
-      <div class="result" id="resultEmail"></div>
-    </section>
-  </div>
+  <section class="level">
+    <h2>Writing Task: Email</h2>
+    <p>Write an email to your manager to request one day off because you have a personal appointment. Be polite and include the reason and the date.</p>
+    <textarea id="email"></textarea>
+    <div class="controls"><button id="btnEmail">Submit Email</button></div>
+    <div class="result" id="resultEmail"></div>
+  </section>
 
   <footer>
-    <p>Once submitted, all results are saved with the candidate’s name. Only examiners may reset or edit responses. Click export once DONE.</p>
-    <div id="adminControls">
-      <button id="btnClearData" class=hidden">Clear Candidate Data</button>
-      <button id="btnExportPDF">Export Results to PDF</button>
-    </div>
+    <button id="btnExportPDF">Export Results to PDF</button>
   </footer>
 
+  <!-- ✅ jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <script>
-    // Helper functions
-    function normalize(s){return String(s||"").trim().toLowerCase();}
-    function wordsCount(s){if(!s) return 0;return s.trim().split(/\s+/).filter(Boolean).length;}
+  document.addEventListener('DOMContentLoaded',()=>{
+    const { jsPDF } = window.jspdf;
 
-    function persist(candidateName, key, value){
-      if(!candidateName) candidateName='(No name)';
-      const storeKey = `skilledtest_${candidateName}`;
-      let data = {};
-      try{ data = JSON.parse(localStorage.getItem(storeKey)) || {}; }catch(e){ data = {}; }
-      data[key]=value;
-      localStorage.setItem(storeKey, JSON.stringify(data));
+    const wordsCount=s=>s.trim().split(/\s+/).filter(Boolean).length;
+    const normalize=s=>String(s||'').trim().toLowerCase();
+
+    // Reading scorers
+    const scoreA1=()=> (normalize(a1q1.value).includes('welder')?1:0) + (normalize(a1q2.value).includes('safety')?1:0);
+    const scoreA2=()=> (normalize(a2q1.value).includes('6')?1:0) + (normalize(a2q2.value).includes('learn')?1:0);
+    const scoreB1=()=> (normalize(b1q1.value).includes('check')||normalize(b1q1.value).includes('assign')?1:0)
+                    + (normalize(b1q2.value).includes('communication')?1:0);
+
+    // Display results
+    document.getElementById('btnA1').onclick=()=>resultA1.innerHTML=`<strong>Score:</strong> ${scoreA1()}`;
+    document.getElementById('btnA2').onclick=()=>resultA2.innerHTML=`<strong>Score:</strong> ${scoreA2()}`;
+    document.getElementById('btnB1').onclick=()=>resultB1.innerHTML=`<strong>Score:</strong> ${scoreB1()}`;
+
+    // Writing
+    document.getElementById('btnEssay').onclick=()=>{
+      const wc=wordsCount(essay.value);
+      resultEssay.innerHTML=`<strong>Word Count:</strong> ${wc}`;
+    };
+    document.getElementById('btnEmail').onclick=()=>{
+      const wc=wordsCount(email.value);
+      resultEmail.innerHTML=`<strong>Word Count:</strong> ${wc}`;
+    };
+
+    // Writing CEFR evaluator
+    function writingLevel(w){
+      if(w<60)return"Below A1";
+      if(w<100)return"A1";
+      if(w<150)return"A2";
+      if(w<200)return"B1";
+      if(w<250)return"B2";
+      return"C1";
     }
 
-    function saveResult(id, score, total, notes){
+    function highestReadingLevel(a1,a2,b1){
+      const scores={A1:a1,A2:a2,B1:b1};
+      let highest='A1',max=scores.A1;
+      for(const lvl in scores){if(scores[lvl]>max){max=scores[lvl];highest=lvl;}}
+      return highest;
+    }
+
+    // Export results to PDF (save, not print)
+    document.getElementById('btnExportPDF').addEventListener('click',()=>{
       const name=document.getElementById('candidateName').value.trim()||'(No name)';
-      const resultDiv=document.getElementById(id);
-      resultDiv.innerHTML=`<strong>Candidate:</strong> ${name}<br><strong>Score:</strong> ${score}/${total}<br><strong>Notes:</strong> ${notes.join(' ')}`;
-      persist(name, id, {score, total, notes, timestamp:new Date().toISOString()});
-      updateOverallSummary(name);
-    }
+      const a1=scoreA1(),a2=scoreA2(),b1=scoreB1();
+      const essayW=wordsCount(essay.value),emailW=wordsCount(email.value);
+      const essayL=writingLevel(essayW),emailL=writingLevel(emailW);
+      const readLevel=highestReadingLevel(a1,a2,b1);
 
-    function updateOverallSummary(name){
-      const storeKey=`skilledtest_${name}`;
-      let data={};
-      try{data=JSON.parse(localStorage.getItem(storeKey))||{};}catch(e){data={};}
-      let gained=0,possible=0;
-      for(const k in data){if(data[k]&&typeof data[k].score==='number'){gained+=data[k].score;possible+=data[k].total;}}
-      let elem=document.getElementById('overallSummary');
-      if(!elem){elem=document.createElement('div');elem.id='overallSummary';elem.className='result';document.body.appendChild(elem);}
-      if(possible>0){
-        const pct=Math.round((gained/possible)*100);
-        let level='Unassessed';
-        if(pct>=85)level='B1+';else if(pct>=70)level='B1';else if(pct>=50)level='A2';else level='A1 or below';
-        elem.innerHTML=`<strong>Candidate:</strong> ${name}<br><strong>Total:</strong> ${gained}/${possible} (${pct}%)<br><strong>Suggested level:</strong> ${level}`;
-      } else elem.innerHTML=`<strong>Candidate:</strong> ${name}<br><em>No submissions yet.</em>`;
-    }
+      const doc=new jsPDF();
+      let y=20;
+      doc.setFontSize(16);
+      doc.text(`Candidate: ${name}`,10,y);y+=10;
 
-    // Grading functions
-    function gradeA1T1(){
-      let score=0,total=2,notes=[];
-      if(normalize(a1q1.value).includes('welder')) score++; else notes.push('Q1 check: John is a welder.');
-      if(normalize(a1q2.value).includes('safety')) score++; else notes.push('Q2 check: for safety reasons.');
-      saveResult('resultA1T1',score,total,notes);
-    }
+      doc.setFontSize(14);
+      doc.text('Reading Comprehension',10,y);y+=8;
+      doc.setFontSize(12);
+      doc.text(`A1 Score: ${a1}/2`,10,y);y+=6;
+      doc.text(`A2 Score: ${a2}/2`,10,y);y+=6;
+      doc.text(`B1 Score: ${b1}/2`,10,y);y+=8;
+      doc.text(`Highest Reading Level: ${readLevel}`,10,y);y+=12;
 
-    function gradeA2T1(){
-      let score=0,total=2,notes=[];
-      if(normalize(a2q1.value).includes('6')) score++; else notes.push('Q1: starts at 6 a.m.');
-      if(normalize(a2q2.value).includes('learn')) score++; else notes.push('Q2: enjoys learning new recipes.');
-      saveResult('resultA2T1',score,total,notes);
-    }
+      doc.setFontSize(14);
+      doc.text('Writing Results',10,y);y+=8;
+      doc.setFontSize(12);
+      doc.text(`Essay Word Count: ${essayW} → Level: ${essayL}`,10,y);y+=6;
+      doc.text(`Email Word Count: ${emailW} → Level: ${emailL}`,10,y);y+=10;
 
-    function gradeB1T1(){
-      let score=0,total=2,notes=[];
-      if(normalize(b1q1.value).includes('check')||normalize(b1q1.value).includes('assign')) score++; else notes.push('Q1: checks safety rules and assigns workers.');
-      if(normalize(b1q2.value).includes('communication')) score++; else notes.push('Q2: communication is important for safety and teamwork.');
-      saveResult('resultB1T1',score,total,notes);
-    }
+      doc.setFontSize(14);
+      doc.text('Overall Summary',10,y);y+=8;
+      doc.setFontSize(12);
+      doc.text(`Reading Level: ${readLevel}`,10,y);y+=6;
+      doc.text(`Writing Level: ${essayL===emailL?essayL:essayL+'/'+emailL}`,10,y);y+=10;
+      doc.text('End of Report',10,y);
 
-    function gradeEssay(){
-      const text=document.getElementById('essay').value;
-      const wc=wordsCount(text);
-      let score=0,total=3,notes=[];
-      if(wc>=60) score++; else notes.push('Need at least 60 words.');
-      if(text.match(/safety/i)) score++; else notes.push('Should mention safety.');
-      if(!text.match(/i|my|me/)) notes.push('Try to include personal examples.'); else score++;
-      saveResult('resultEssay',score,total,notes);
-    }
-
-    function gradeEmail(){
-      const text=document.getElementById('email').value;
-      let score=0,total=3,notes=[];
-      if(text.match(/dear/i)) score++; else notes.push('Start with greeting (Dear ...)');
-      if(text.match(/thank/i)||text.match(/please/i)) score++; else notes.push('Use polite tone.');
-      if(text.match(/day off/i)||text.match(/leave/i)) score++; else notes.push('Mention reason/date for leave.');
-      saveResult('resultEmail',score,total,notes);
-    }
-
-    // Examiner controls
-    function enableExaminerMode(){
-      const admin=document.getElementById('adminControls');
-      admin.classList.remove('hidden');
-      alert('Examiner mode enabled. You may now clear data or export results.');
-    }
-
-    function clearCandidateData(){
-      const name=document.getElementById('candidateName').value.trim();
-      if(!name){alert('Enter candidate name first.');return;}
-      if(confirm(`Are you sure you want to clear data for ${name}?`)){
-        localStorage.removeItem(`skilledtest_${name}`);
-        alert('Data cleared.');
-      }
-    }
-
-    async function exportToPDF(){
-      const name=document.getElementById('candidateName').value.trim();
-      if(!name){alert('Enter candidate name first.');return;}
-      const storeKey=`skilledtest_${name}`;
-      const data=JSON.parse(localStorage.getItem(storeKey)||'{}');
-      let html=`<h2>Candidate: ${name}</h2>`;
-      for(const key in data){
-        const v=data[key];
-        html+=`<p><strong>${key}</strong>: ${v.score}/${v.total}<br>${v.notes.join(' ')}</p>`;
-      }
-
-      // Collecting all answers for PDF export
-      html += `<h3>All Answers:</h3>`;
-      html += `<p><strong>A1 Test 1 Answers:</strong> Q1: ${document.getElementById('a1q1').value}, Q2: ${document.getElementById('a1q2').value}</p>`;
-      html += `<p><strong>A2 Test 1 Answers:</strong> Q1: ${document.getElementById('a2q1').value}, Q2: ${document.getElementById('a2q2').value}</p>`;
-      html += `<p><strong>B1 Test 1 Answers:</strong> Q1: ${document.getElementById('b1q1').value}, Q2: ${document.getElementById('b1q2').value}</p>`;
-      html += `<p><strong>Essay:</strong> ${document.getElementById('essay').value}</p>`;
-      html += `<p><strong>Email:</strong> ${document.getElementById('email').value}</p>`;
-
-      const printWin=window.open('', '_blank');
-      printWin.document.write(`<html><head><title>${name} Results</title></head><body>${html}</body></html>`);
-      printWin.document.close();
-      printWin.print();
-    }
-
-    // Secret key to unlock examiner mode
-    document.addEventListener('keydown', e=>{
-      if(e.ctrlKey && e.altKey && e.key==='E'){
-        enableExaminerMode();
-      }
+      const filename=`${name.replace(/\s+/g,'_')||'Candidate'}_Managers_Results.pdf`;
+      doc.save(filename);
     });
-
-    // Wire all buttons
-    document.addEventListener('DOMContentLoaded',()=>{
-      document.getElementById('btnA1T1').addEventListener('click',gradeA1T1);
-      document.getElementById('btnA2T1').addEventListener('click',gradeA2T1);
-      document.getElementById('btnB1T1').addEventListener('click',gradeB1T1);
-      document.getElementById('btnEssay').addEventListener('click',gradeEssay);
-      document.getElementById('btnEmail').addEventListener('click',gradeEmail);
-      document.getElementById('btnClearData').addEventListener('click',clearCandidateData);
-      document.getElementById('btnExportPDF').addEventListener('click',exportToPDF);
-    });
+  });
   </script>
 </body>
 </html>
-
