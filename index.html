@@ -39,14 +39,14 @@
     <h2>A1 Reading Test</h2>
     <div class="passage">John works at a factory. Every day, he wears his safety gloves, boots, goggles, and helmet before welding. He likes his job because he assembles things with his hands.</div>
     <div class="question"><label>1. What is John's job?</label><input class="short-answer" id="a1q1"></div>
-    <div class="question"><label>2. Why does he wear safety gloves?</label><input class="short-answer" id="a1q2"></div>
+    <div class="question"><label>2. Why does he wear gloves?</label><input class="short-answer" id="a1q2"></div>
     <div class="controls"><button id="btnA1">Submit A1 Test</button></div>
     <div class="result" id="resultA1"></div>
   </section>
 
   <section class="level">
     <h2>A2 Reading Test</h2>
-    <div class="passage">Maria is a pastry cook in a hotel kitchen. She starts work at 6 a.m., Western Australia time. She prepares dough and bakes bread and cakes for guests. She enjoys learning new recipes from her coworkers.</div>
+    <div class="passage">Maria is a pastry cook in a hotel kitchen. She starts work at 6 a.m. in Western Australia. She prepares dough and bakes bread and cakes for guests. She enjoys learning new recipes from her coworkers.</div>
     <div class="question"><label>1. Where does Maria work?</label><input class="short-answer" id="a2q1"></div>
     <div class="question"><label>2. What does Maria enjoy at work?</label><input class="short-answer" id="a2q2"></div>
     <div class="controls"><button id="btnA2">Submit A2 Test</button></div>
@@ -94,7 +94,7 @@
     const normalize=s=>String(s||'').trim().toLowerCase();
 
     // Reading scorers
-    const scoreA1=()=> (normalize(a1q1.value).includes('welder')?1:0) + (normalize(a1q2.value).includes('safety')?1:0);
+    const scoreA1=()=> (normalize(a1q1.value).includes('welder')?1:0) + (normalize(a1q2.value).includes('safety')||normalize(b1q2.value).includes('because')?1:0);
     const scoreA2=()=> (normalize(a2q1.value).includes('Australia')?1:0) + (normalize(a2q2.value).includes('learning')?1:0); 
     const scoreB1=()=> (normalize(b1q1.value).includes('checks')||normalize(b1q1.value).includes('assigns')?1:0)
                     + (normalize(b1q2.value).includes('communication')||normalize(b1q2.value).includes('team')?1:0);
@@ -172,6 +172,7 @@
   </script>
 </body>
 </html>
+
 
 
 
