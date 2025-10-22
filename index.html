@@ -96,7 +96,8 @@
 
     // Reading scorers
     const scoreA1=()=> (normalize(a1q1.value).includes('welder')?1:0) + (normalize(a1q2.value).includes('safety')?1:0);
-    const scoreA2=()=> (normalize(a2q1.value).includes('6')?1:0) + (normalize(a2q2.value).includes('learn new recipes')?1:0) + (normalize(a2q3.value).includes('Australia')?1:0);
+    const scoreA2=()=> (normalize(a2q1.value).includes('6')?1:0) + (normalize(a2q2.value).includes('learning')?1:0) 
+                    + (normalize(a2q3.value).includes('Australia')?1:0);
     const scoreB1=()=> (normalize(b1q1.value).includes('checks')||normalize(b1q1.value).includes('assigns')?1:0)
                     + (normalize(b1q2.value).includes('communication')||normalize(b1q2.value).includes('team work')?1:0);
 
@@ -173,5 +174,6 @@
   </script>
 </body>
 </html>
+
 
 
