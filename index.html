@@ -3,255 +3,434 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Supervisory & Managerial English Test — Reading & Writing</title>
+  <title>READING COMPREHENSION and WRITING TESTS</title>
   <style>
-    :root {
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-    }
-    body {
-      max-width: 1000px;
-      margin: 28px auto;
-      padding: 20px;
-      line-height: 1.45;
-      color: #111;
-      background: #fff;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    h1 { font-size: 1.6rem; margin: 0; }
-    .name-field {
-      font-size: 1rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      padding: 6px;
-      width: 250px;
-    }
-    .section {
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 18px;
-      margin: 18px 0;
-      background: #fbfdff;
-    }
-    h2 { margin-top: 0; }
-    .passage {
-      background: #fff;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #eef2f7;
-      margin-bottom: 12px;
-    }
-    .question {
-      margin: 8px 0;
-      padding: 10px;
-      border-left: 3px solid #c7d2fe;
-      background: #fcfcff;
-      border-radius: 6px;
-    }
-    label {
-      display: block;
-      cursor: pointer;
-      margin-left: 6px;
-    }
-    textarea {
-      width: 100%;
-      min-height: 140px;
-      padding: 8px;
-      border-radius: 8px;
-      border: 1px solid #e6eef8;
-    }
-    button {
-      background: #2563eb;
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    footer {
-      margin-top: 28px;
-      font-size: 0.9rem;
-      color: #475569;
-    }
-    .result {
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 8px;
-      background: #f8fafc;
-      border: 1px solid #e6eef8;
-    }
+    :root { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; }
+    body { max-width: 980px; margin: 26px auto; padding: 18px; background: #fff; color: #111; line-height:1.5; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+    h1 { margin:0; font-size:1.4rem; }
+    .name-field { padding:6px 8px; border-radius:8px; border:1px solid #cbd5e1; width:260px; }
+    .section { border:1px solid #e6eef8; border-radius:10px; padding:16px; margin-top:18px; background:#fbfdff; }
+    .passage { background:#fff; border-radius:8px; border:1px solid #eef2f7; padding:12px; margin-bottom:10px; }
+    .question { padding:8px 10px; margin:8px 0; border-left:4px solid #c7d2fe; background:#fcfcff; border-radius:6px; }
+    label { display:block; cursor:pointer; margin-left:6px; }
+    textarea { width:100%; min-height:140px; padding:8px; border-radius:8px; border:1px solid #e6eef8; }
+    button { background:#2563eb; color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; margin-top:10px; }
+    .result { margin-top:10px; padding:10px; background:#f8fafc; border-radius:8px; border:1px solid #e6eef8; }
+    table { width:100%; border-collapse:collapse; margin-top:8px; }
+    th, td { border:1px solid #e2e8f0; padding:6px; text-align:left; }
+    th { background:#f1f5f9; }
+    input[type="number"] { width:64px; padding:4px; border-radius:6px; border:1px solid #cbd5e1; text-align:center; }
+    footer { margin-top:20px; color:#475569; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Supervisory & Managerial English Test — Reading & Writing</h1>
+    <h1>READING COMPREHENSION and WRITING TESTS</h1>
     <div>
       <label><strong>Candidate Name:</strong></label>
-      <input class="name-field" id="candidateName" placeholder="Write your full name here" />
+      <input id="candidateName" class="name-field" placeholder="Write full name here">
     </div>
   </header>
 
-  <p><strong>Instructions:</strong> Complete all parts. Click <em>Export to PDF</em> when finished. The PDF will include your answers and scores.</p>
+  <p><strong>Instructions:</strong> Complete all sections. Do not refresh. Click <em>Export to PDF</em> when finished. Reading answers are scored only at export time; correct answers are not shown to applicants.</p>
 
-  <!-- Reading Section -->
-  <section class="section">
-    <h2>Part 1 — Reading Comprehension (20 points)</h2>
-    <p><strong>Topics:</strong> Team Communication, Customer Service, Decision-Making, Team Motivation</p>
+  <!-- READING (passages statically in HTML) -->
+  <section class="section" id="reading-section">
+    <h2>Part 1 — Reading Comprehension (20 questions)</h2>
 
-    <div id="reading-questions"></div>
+    <!-- Passage 1 -->
+    <div class="passage">
+      <h3>📘 Passage 1 — Team Communication</h3>
+      <p>Maria manages a small group of technicians. She begins each day with a short meeting to review safety issues and task assignments. When a problem happens, she encourages open discussion before making a final decision. She also checks if everyone understands their tasks before they begin.</p>
+    </div>
 
-    <button id="submitReading">Submit Reading Answers</button>
-    <div class="result" id="readingResult"></div>
+    <div class="question">
+      <strong>1. Why does Maria hold a short meeting each morning?</strong>
+      <label><input type="radio" name="q1" value="0"> A. To assign tasks and review safety issues</label>
+      <label><input type="radio" name="q1" value="1"> B. To monitor attendance only</label>
+      <label><input type="radio" name="q1" value="2"> C. To discipline her staff</label>
+      <label><input type="radio" name="q1" value="3"> D. To discuss salaries</label>
+    </div>
+
+    <div class="question">
+      <strong>2. What does Maria do when a problem occurs?</strong>
+      <label><input type="radio" name="q2" value="0"> A. She ignores it</label>
+      <label><input type="radio" name="q2" value="1"> B. She makes a decision alone</label>
+      <label><input type="radio" name="q2" value="2"> C. She encourages discussion</label>
+      <label><input type="radio" name="q2" value="3"> D. She reports it immediately</label>
+    </div>
+
+    <div class="question">
+      <strong>3. What does Maria check before work begins?</strong>
+      <label><input type="radio" name="q3" value="0"> A. If everyone understands their tasks</label>
+      <label><input type="radio" name="q3" value="1"> B. If lunch is ready</label>
+      <label><input type="radio" name="q3" value="2"> C. If the tools are expensive</label>
+      <label><input type="radio" name="q3" value="3"> D. If the workers are late</label>
+    </div>
+
+    <div class="question">
+      <strong>4. Which of the following best describes Maria’s leadership?</strong>
+      <label><input type="radio" name="q4" value="0"> A. Authoritative</label>
+      <label><input type="radio" name="q4" value="1"> B. Communicative and inclusive</label>
+      <label><input type="radio" name="q4" value="2"> C. Careless</label>
+      <label><input type="radio" name="q4" value="3"> D. Aggressive</label>
+    </div>
+
+    <div class="question">
+      <strong>5. What can we learn from Maria’s example?</strong>
+      <label><input type="radio" name="q5" value="0"> A. Communication helps teams work safely and effectively</label>
+      <label><input type="radio" name="q5" value="1"> B. Supervisors should avoid staff opinions</label>
+      <label><input type="radio" name="q5" value="2"> C. Meetings waste time</label>
+      <label><input type="radio" name="q5" value="3"> D. Only managers can solve problems</label>
+    </div>
+
+    <!-- Passage 2 -->
+    <div class="passage">
+      <h3>📘 Passage 2 — Customer Service</h3>
+      <p>James supervises a front desk team at a hotel. One morning, a guest complained about a delayed check-in. Instead of blaming his staff, James apologized politely and offered the guest a free coffee while they waited. Later, he reminded his team to double-check room readiness before guests arrive.</p>
+    </div>
+
+    <div class="question">
+      <strong>6. What problem did the guest have?</strong>
+      <label><input type="radio" name="q6" value="0"> A. Missing luggage</label>
+      <label><input type="radio" name="q6" value="1"> B. Slow check-in</label>
+      <label><input type="radio" name="q6" value="2"> C. Wrong room key</label>
+      <label><input type="radio" name="q6" value="3"> D. Late wake-up call</label>
+    </div>
+
+    <div class="question">
+      <strong>7. How did James respond to the complaint?</strong>
+      <label><input type="radio" name="q7" value="0"> A. He blamed his team</label>
+      <label><input type="radio" name="q7" value="1"> B. He ignored the guest</label>
+      <label><input type="radio" name="q7" value="2"> C. He apologized and offered coffee</label>
+      <label><input type="radio" name="q7" value="3"> D. He argued with the guest</label>
+    </div>
+
+    <div class="question">
+      <strong>8. What action did James take afterward?</strong>
+      <label><input type="radio" name="q8" value="0"> A. Fired a staff member</label>
+      <label><input type="radio" name="q8" value="1"> B. Reminded the team to double-check rooms</label>
+      <label><input type="radio" name="q8" value="2"> C. Changed the hotel policy</label>
+      <label><input type="radio" name="q8" value="3"> D. Closed the reception early</label>
+    </div>
+
+    <div class="question">
+      <strong>9. What does this story show about good customer service?</strong>
+      <label><input type="radio" name="q9" value="0"> A. Politeness and quick solutions matter</label>
+      <label><input type="radio" name="q9" value="1"> B. Guests should not complain</label>
+      <label><input type="radio" name="q9" value="2"> C. Free gifts solve every issue</label>
+      <label><input type="radio" name="q9" value="3"> D. Rules are more important than people</label>
+    </div>
+
+    <div class="question">
+      <strong>10. What leadership skill did James demonstrate?</strong>
+      <label><input type="radio" name="q10" value="0"> A. Blame shifting</label>
+      <label><input type="radio" name="q10" value="1"> B. Emotional control and accountability</label>
+      <label><input type="radio" name="q10" value="2"> C. Strict enforcement</label>
+      <label><input type="radio" name="q10" value="3"> D. Indifference</label>
+    </div>
+
+    <!-- Passage 3 -->
+    <div class="passage">
+      <h3>📘 Passage 3 — Decision-Making</h3>
+      <p>Amina manages a production line. When two workers argued about machine usage, she listened to both sides. She gathered facts about the schedule, discussed alternatives, and assigned clear time slots for each worker. The problem was resolved quickly, and both workers appreciated her fairness.</p>
+    </div>
+
+    <div class="question">
+      <strong>11. What was the problem in Amina’s team?</strong>
+      <label><input type="radio" name="q11" value="0"> A. Missing materials</label>
+      <label><input type="radio" name="q11" value="1"> B. Argument over machine usage</label>
+      <label><input type="radio" name="q11" value="2"> C. Unsafe working area</label>
+      <label><input type="radio" name="q11" value="3"> D. Lack of attendance</label>
+    </div>
+
+    <div class="question">
+      <strong>12. What did Amina do first?</strong>
+      <label><input type="radio" name="q12" value="0"> A. Listened to both sides</label>
+      <label><input type="radio" name="q12" value="1"> B. Made a quick decision</label>
+      <label><input type="radio" name="q12" value="2"> C. Called higher management</label>
+      <label><input type="radio" name="q12" value="3"> D. Ignored the problem</label>
+    </div>
+
+    <div class="question">
+      <strong>13. What action helped solve the issue?</strong>
+      <label><input type="radio" name="q13" value="0"> A. Assigning clear time slots</label>
+      <label><input type="radio" name="q13" value="1"> B. Giving overtime pay</label>
+      <label><input type="radio" name="q13" value="2"> C. Avoiding discussions</label>
+      <label><input type="radio" name="q13" value="3"> D. Replacing a worker</label>
+    </div>
+
+    <div class="question">
+      <strong>14. Why did her workers appreciate her decision?</strong>
+      <label><input type="radio" name="q14" value="0"> A. It was fair and based on facts</label>
+      <label><input type="radio" name="q14" value="1"> B. It favored one person</label>
+      <label><input type="radio" name="q14" value="2"> C. It reduced their workload</label>
+      <label><input type="radio" name="q14" value="3"> D. It gave them extra breaks</label>
+    </div>
+
+    <div class="question">
+      <strong>15. What skill did Amina show in this case?</strong>
+      <label><input type="radio" name="q15" value="0"> A. Effective decision-making and fairness</label>
+      <label><input type="radio" name="q15" value="1"> B. Strict rule enforcement</label>
+      <label><input type="radio" name="q15" value="2"> C. Emotional detachment</label>
+      <label><input type="radio" name="q15" value="3"> D. Delegation</label>
+    </div>
+
+    <!-- Passage 4 -->
+    <div class="passage">
+      <h3>📘 Passage 4 — Team Motivation</h3>
+      <p>Rafael leads a sales team. When targets are met, he congratulates everyone publicly and sends thank-you emails. He also gives small rewards like certificates or lunch treats. When results are low, he talks privately with the team to understand the challenges and sets new realistic goals.</p>
+    </div>
+
+    <div class="question">
+      <strong>16. What does Rafael do when his team meets targets?</strong>
+      <label><input type="radio" name="q16" value="0"> A. Gives public recognition and small rewards</label>
+      <label><input type="radio" name="q16" value="1"> B. Ignores the results</label>
+      <label><input type="radio" name="q16" value="2"> C. Reports to HR</label>
+      <label><input type="radio" name="q16" value="3"> D. Cuts working hours</label>
+    </div>
+
+    <div class="question">
+      <strong>17. How does Rafael respond when results are low?</strong>
+      <label><input type="radio" name="q17" value="0"> A. Blames the whole team</label>
+      <label><input type="radio" name="q17" value="1"> B. Talks privately to understand problems</label>
+      <label><input type="radio" name="q17" value="2"> C. Gives no feedback</label>
+      <label><input type="radio" name="q17" value="3"> D. Reduces salaries</label>
+    </div>
+
+    <div class="question">
+      <strong>18. Why does Rafael meet the team privately?</strong>
+      <label><input type="radio" name="q18" value="0"> A. To find out what went wrong</label>
+      <label><input type="radio" name="q18" value="1"> B. To announce bonuses</label>
+      <label><input type="radio" name="q18" value="2"> C. To avoid management</label>
+      <label><input type="radio" name="q18" value="3"> D. To discuss vacations</label>
+    </div>
+
+    <div class="question">
+      <strong>19. What leadership style does Rafael show?</strong>
+      <label><input type="radio" name="q19" value="0"> A. Supportive and motivating</label>
+      <label><input type="radio" name="q19" value="1"> B. Aggressive</label>
+      <label><input type="radio" name="q19" value="2"> C. Passive</label>
+      <label><input type="radio" name="q19" value="3"> D. Controlling</label>
+    </div>
+
+    <div class="question">
+      <strong>20. What lesson can supervisors learn from Rafael?</strong>
+      <label><input type="radio" name="q20" value="0"> A. Recognition and communication motivate staff</label>
+      <label><input type="radio" name="q20" value="1"> B. Only money motivates people</label>
+      <label><input type="radio" name="q20" value="2"> C. Supervisors should avoid emotions</label>
+      <label><input type="radio" name="q20" value="3"> D. Meetings reduce productivity</label>
+    </div>
+
+    <div class="result" id="readingNote">Note: Reading answers are scored only at Export to PDF time.</div>
   </section>
 
-  <!-- Writing: Essay -->
+  <!-- WRITING - Essay -->
   <section class="section">
-    <h2>Part 2 — Writing Task 1: Essay (10 points)</h2>
+    <h2>Part 2 — Writing Tests</h2>
+
+    <h3>Essay (10 points)</h3>
     <p><strong>Topic:</strong> What are the best ways to motivate your team at work? Explain your answer with examples.</p>
-    <textarea id="essay"></textarea>
-    <button id="submitEssay">Submit Essay</button>
-    <div class="result" id="essayResult"></div>
-  </section>
+    <textarea id="essayText" placeholder="Type the essay here..."></textarea>
 
-  <!-- Writing: Email -->
-  <section class="section">
-    <h2>Part 2 — Writing Task 2: Email (10 points)</h2>
-    <p><strong>Scenario:</strong> Write a professional email to your manager explaining a delay in project submission due to an unexpected issue. Include:  
-      <ul>
-        <li>A clear subject line</li>
-        <li>Polite apology</li>
-        <li>Reason for delay</li>
-        <li>Proposed new deadline</li>
-        <li>Closing and signature</li>
-      </ul>
-    </p>
-    <textarea id="email"></textarea>
-    <button id="submitEmail">Submit Email</button>
-    <div class="result" id="emailResult"></div>
+    <h4>Essay Scoring Rubric (enter evaluator scores)</h4>
+    <table>
+      <tr><th>Criteria</th><th>Max</th><th>Score</th></tr>
+      <tr><td>Content & Ideas (relevance and completeness)</td><td>4</td><td><input type="number" id="essayContent" min="0" max="4" value="0"></td></tr>
+      <tr><td>Organization (intro-body-conclusion, flow)</td><td>2</td><td><input type="number" id="essayOrg" min="0" max="2" value="0"></td></tr>
+      <tr><td>Grammar & Vocabulary</td><td>2</td><td><input type="number" id="essayGram" min="0" max="2" value="0"></td></tr>
+      <tr><td>Mechanics (spelling, punctuation)</td><td>2</td><td><input type="number" id="essayMech" min="0" max="2" value="0"></td></tr>
+      <tr><th>Total</th><th>10</th><th id="essayTotal">0</th></tr>
+    </table>
+    <button id="computeEssay">Compute Essay Score</button>
+    <div class="result" id="essayResult">Essay score will appear here after computing.</div>
+
+    <hr style="margin:18px 0;">
+    <h3>Email (10 points)</h3>
+    <p><strong>Scenario:</strong> Write a professional email to your manager explaining a delay in project submission due to an unexpected issue. Include subject line, apology, reason, new deadline, closing and signature.</p>
+    <textarea id="emailText" placeholder="Type the email here..."></textarea>
+
+    <h4>Email Scoring Rubric (enter evaluator scores)</h4>
+    <table>
+      <tr><th>Criteria</th><th>Max</th><th>Score</th></tr>
+      <tr><td>Format (subject, greeting, closing)</td><td>2</td><td><input type="number" id="emailFormat" min="0" max="2" value="0"></td></tr>
+      <tr><td>Clarity & Structure</td><td>3</td><td><input type="number" id="emailStruct" min="0" max="3" value="0"></td></tr>
+      <tr><td>Tone & Professionalism</td><td>2</td><td><input type="number" id="emailTone" min="0" max="2" value="0"></td></tr>
+      <tr><td>Grammar & Mechanics</td><td>3</td><td><input type="number" id="emailGram" min="0" max="3" value="0"></td></tr>
+      <tr><th>Total</th><th>10</th><th id="emailTotal">0</th></tr>
+    </table>
+    <button id="computeEmail">Compute Email Score</button>
+    <div class="result" id="emailResult">Email score will appear here after computing.</div>
   </section>
 
   <footer>
-    <button id="btnExportPDF">Export Results to PDF</button>
+    <button id="exportPdfBtn">Export to PDF</button>
   </footer>
 
+  <!-- jsPDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  // Internal correct answers (hidden from applicant view)
+  // Each is the index 0..3 corresponding to A..D for q1..q20
+  const CORRECT = [0,2,0,1,0, 1,2,1,0,1, 1,0,0,0,0, 0,1,0,0,0];
+
+  // utility: get selected option index for a question name qN (1..20)
+  function getSelectedIndex(qName) {
+    const sel = document.querySelector(`input[name="${qName}"]:checked`);
+    return sel ? Number(sel.value) : -1;
+  }
+
+  // compute reading score (but do not show answers to applicant)
+  function computeReadingScoreAndAnswers() {
+    const answersText = [];
+    let score = 0;
+    for (let i = 1; i <= 20; i++) {
+      const selIndex = getSelectedIndex('q' + i);
+      const optionLabel = selIndex === -1 ? "(No answer)" : ["A","B","C","D"][selIndex] + `: ` + document.querySelector(`input[name="q${i}"][value="${selIndex}"]`).parentNode.textContent.trim().slice(3);
+      answersText.push({ q: i, selectedIndex: selIndex, selectedLabel: optionLabel });
+      if (selIndex === CORRECT[i-1]) score++;
+    }
+    return { score, answersText };
+  }
+
+  // compute essay score from rubric inputs and show totals on page
+  function computeEssayScore() {
+    const c = Number(document.getElementById('essayContent').value) || 0;
+    const o = Number(document.getElementById('essayOrg').value) || 0;
+    const g = Number(document.getElementById('essayGram').value) || 0;
+    const m = Number(document.getElementById('essayMech').value) || 0;
+    const total = c + o + g + m;
+    document.getElementById('essayTotal').textContent = total;
+    document.getElementById('essayResult').innerHTML = `<strong>Essay Score:</strong> ${total}/10`;
+    return { c, o, g, m, total };
+  }
+
+  // compute email score from rubric inputs and show totals on page
+  function computeEmailScore() {
+    const f = Number(document.getElementById('emailFormat').value) || 0;
+    const s = Number(document.getElementById('emailStruct').value) || 0;
+    const t = Number(document.getElementById('emailTone').value) || 0;
+    const g = Number(document.getElementById('emailGram').value) || 0;
+    const total = f + s + t + g;
+    document.getElementById('emailTotal').textContent = total;
+    document.getElementById('emailResult').innerHTML = `<strong>Email Score:</strong> ${total}/10`;
+    return { f, s, t, g, total };
+  }
+
+  // wire up compute buttons
+  document.getElementById('computeEssay').addEventListener('click', computeEssayScore);
+  document.getElementById('computeEmail').addEventListener('click', computeEmailScore);
+
+  // Export PDF - this will:
+  // - compute reading score (auto-check)
+  // - include selected answers (not correct answers)
+  // - include passages, reading answers, reading total
+  // - include essay & email text, rubric breakdowns & totals
+  // filename: CandidateName_ReadingWritingTest.pdf
+  document.getElementById('exportPdfBtn').addEventListener('click', async () => {
+    // Recompute writing scores to ensure values are current
+    const essayRubric = computeEssayScore();
+    const emailRubric = computeEmailScore();
+
+    // Compute reading score and gather selected answers
+    const reading = computeReadingScoreAndAnswers();
+
+    // Prepare PDF
     const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: "mm", format: "a4" });
+    let y = 14;
+    const left = 10;
+    doc.setFontSize(14);
+    doc.text("READING COMPREHENSION and WRITING TESTS — Results", left, y); y += 8;
+    doc.setFontSize(11);
+    const name = (document.getElementById('candidateName').value || "").trim() || "Candidate";
+    doc.text(`Candidate: ${name}`, left, y); y += 6;
+    doc.text(`Date: ${new Date().toLocaleDateString()}`, left, y); y += 8;
 
-    const questions = [
-      // Passage 1: Team Communication
-      { q: "Why does Maria hold a short meeting each morning?", opts: ["To assign tasks and review safety issues", "To monitor attendance only", "To discipline her staff", "To discuss salaries"], ans: 0 },
-      { q: "What does Maria do when a problem occurs?", opts: ["She ignores it", "She makes a decision alone", "She encourages discussion", "She reports it immediately"], ans: 2 },
-      { q: "What does Maria check before work begins?", opts: ["If everyone understands their tasks", "If lunch is ready", "If the tools are expensive", "If the workers are late"], ans: 0 },
-      { q: "Which of the following best describes Maria’s leadership?", opts: ["Authoritative", "Communicative and inclusive", "Careless", "Aggressive"], ans: 1 },
-      { q: "What can we learn from Maria’s example?", opts: ["Communication helps teams work safely and effectively", "Supervisors should avoid staff opinions", "Meetings waste time", "Only managers can solve problems"], ans: 0 },
-
-      // Passage 2: Customer Service
-      { q: "What problem did the guest have?", opts: ["Missing luggage", "Slow check-in", "Wrong room key", "Late wake-up call"], ans: 1 },
-      { q: "How did James respond to the complaint?", opts: ["He blamed his team", "He ignored the guest", "He apologized and offered coffee", "He argued with the guest"], ans: 2 },
-      { q: "What action did James take afterward?", opts: ["Fired a staff member", "Reminded the team to double-check rooms", "Changed the hotel policy", "Closed the reception early"], ans: 1 },
-      { q: "What does this story show about good customer service?", opts: ["Politeness and quick solutions matter", "Guests should not complain", "Free gifts solve every issue", "Rules are more important than people"], ans: 0 },
-      { q: "What leadership skill did James demonstrate?", opts: ["Blame shifting", "Emotional control and accountability", "Strict enforcement", "Indifference"], ans: 1 },
-
-      // Passage 3: Decision-Making
-      { q: "What was the problem in Amina’s team?", opts: ["Missing materials", "Argument over machine usage", "Unsafe working area", "Lack of attendance"], ans: 1 },
-      { q: "What did Amina do first?", opts: ["Listened to both sides", "Made a quick decision", "Called higher management", "Ignored the problem"], ans: 0 },
-      { q: "What action helped solve the issue?", opts: ["Assigning clear time slots", "Giving overtime pay", "Avoiding discussions", "Replacing a worker"], ans: 0 },
-      { q: "Why did her workers appreciate her decision?", opts: ["It was fair and based on facts", "It favored one person", "It reduced their workload", "It gave them extra breaks"], ans: 0 },
-      { q: "What skill did Amina show in this case?", opts: ["Effective decision-making and fairness", "Strict rule enforcement", "Emotional detachment", "Delegation"], ans: 0 },
-
-      // Passage 4: Team Motivation
-      { q: "What does Rafael do when his team meets targets?", opts: ["Gives public recognition and small rewards", "Ignores the results", "Reports to HR", "Cuts working hours"], ans: 0 },
-      { q: "How does Rafael respond when results are low?", opts: ["Blames the whole team", "Talks privately to understand problems", "Gives no feedback", "Reduces salaries"], ans: 1 },
-      { q: "Why does Rafael meet the team privately?", opts: ["To find out what went wrong", "To announce bonuses", "To avoid management", "To discuss vacations"], ans: 0 },
-      { q: "What leadership style does Rafael show?", opts: ["Supportive and motivating", "Aggressive", "Passive", "Controlling"], ans: 0 },
-      { q: "What lesson can supervisors learn from Rafael?", opts: ["Recognition and communication motivate staff", "Only money motivates people", "Supervisors should avoid emotions", "Meetings reduce productivity"], ans: 0 },
+    // Add passages & questions (answers collected separately below)
+    doc.setFontSize(12);
+    doc.text("Part 1 — Passages (for reference):", left, y); y += 7;
+    const passagesText = [
+      { title: "Passage 1 — Team Communication", text: "Maria manages a small group of technicians. She begins each day with a short meeting to review safety issues and task assignments. When a problem happens, she encourages open discussion before making a final decision. She also checks if everyone understands their tasks before they begin." },
+      { title: "Passage 2 — Customer Service", text: "James supervises a front desk team at a hotel. One morning, a guest complained about a delayed check-in. Instead of blaming his staff, James apologized politely and offered the guest a free coffee while they waited. Later, he reminded his team to double-check room readiness before guests arrive." },
+      { title: "Passage 3 — Decision-Making", text: "Amina manages a production line. When two workers argued about machine usage, she listened to both sides. She gathered facts about the schedule, discussed alternatives, and assigned clear time slots for each worker. The problem was resolved quickly, and both workers appreciated her fairness." },
+      { title: "Passage 4 — Team Motivation", text: "Rafael leads a sales team. When targets are met, he congratulates everyone publicly and sends thank-you emails. He also gives small rewards like certificates or lunch treats. When results are low, he talks privately with the team to understand the challenges and sets new realistic goals." }
     ];
 
-    const container = document.getElementById('reading-questions');
-    questions.forEach((item, i) => {
-      const qDiv = document.createElement('div');
-      qDiv.className = 'question';
-      qDiv.innerHTML = `<p><strong>${i + 1}. ${item.q}</strong></p>`;
-      item.opts.forEach((opt, j) => {
-        qDiv.innerHTML += `<label><input type="radio" name="q${i}" value="${j}"> ${opt}</label>`;
-      });
-      container.appendChild(qDiv);
+    doc.setFontSize(10);
+    passagesText.forEach(p => {
+      const lines = doc.splitTextToSize(p.title + " — " + p.text, 180);
+      doc.text(lines, left, y);
+      y += lines.length * 6;
+      if (y > 270) { doc.addPage(); y = 14; }
     });
 
-    document.getElementById('submitReading').onclick = () => {
-      let score = 0;
-      let answers = [];
-      questions.forEach((q, i) => {
-        const sel = document.querySelector(`input[name="q${i}"]:checked`);
-        const ansIndex = sel ? parseInt(sel.value) : -1;
-        answers.push(ansIndex >= 0 ? q.opts[ansIndex] : "(No answer)");
-        if (ansIndex === q.ans) score++;
-      });
-      document.getElementById('readingResult').innerHTML = `<strong>Reading Score:</strong> ${score}/20`;
-      window.readingAnswers = answers;
-      window.readingScore = score;
-    };
-
-    // Writing
-    const wordCount = s => s.trim().split(/\s+/).filter(Boolean).length;
-    document.getElementById('submitEssay').onclick = () => {
-      const wc = wordCount(essay.value);
-      document.getElementById('essayResult').innerHTML = `<strong>Word Count:</strong> ${wc}`;
-      window.essayText = essay.value;
-    };
-    document.getElementById('submitEmail').onclick = () => {
-      const wc = wordCount(email.value);
-      document.getElementById('emailResult').innerHTML = `<strong>Word Count:</strong> ${wc}`;
-      window.emailText = email.value;
-    };
-
-    // Export PDF
-    document.getElementById('btnExportPDF').addEventListener('click', () => {
-      const name = document.getElementById('candidateName').value.trim() || '(No name)';
-      const doc = new jsPDF({ orientation: "p", unit: "mm", format: "a4" });
-      let y = 15;
-      doc.setFontSize(14);
-      doc.text(`Supervisory & Managerial English Test Results`, 10, y); y += 8;
-      doc.setFontSize(12);
-      doc.text(`Candidate: ${name}`, 10, y); y += 8;
-      doc.text(`Date: ${new Date().toLocaleDateString()}`, 10, y); y += 12;
-
-      doc.text(`Reading Score: ${window.readingScore || 0}/20`, 10, y); y += 8;
-      doc.text("Answers:", 10, y); y += 6;
-
-      (window.readingAnswers || []).forEach((ans, i) => {
-        const line = `${i + 1}. ${ans}`;
-        const split = doc.splitTextToSize(line, 180);
-        doc.text(split, 10, y);
-        y += split.length * 6;
-        if (y > 270) { doc.addPage(); y = 15; }
-      });
-
-      doc.addPage();
-      y = 15;
-      doc.setFontSize(12);
-      doc.text("Essay Response:", 10, y); y += 6;
-      const essayLines = doc.splitTextToSize(window.essayText || "(No response)", 180);
-      doc.text(essayLines, 10, y); y += essayLines.length * 6;
-
-      doc.addPage();
-      y = 15;
-      doc.text("Email Response:", 10, y); y += 6;
-      const emailLines = doc.splitTextToSize(window.emailText || "(No response)", 180);
-      doc.text(emailLines, 10, y); y += emailLines.length * 6;
-
-      doc.save(`${name.replace(/\s+/g, '_') || 'Candidate'}_Supervisory_Test.pdf`);
+    // Reading selected answers (applicant's answers)
+    doc.addPage(); y = 14;
+    doc.setFontSize(12);
+    doc.text("Part 1 — Selected Answers (applicant):", left, y); y += 8;
+    doc.setFontSize(10);
+    reading.answersText.forEach(item => {
+      const line = `${item.q}. ${item.selectedLabel}`;
+      const lines = doc.splitTextToSize(line, 180);
+      doc.text(lines, left, y);
+      y += lines.length * 6;
+      if (y > 270) { doc.addPage(); y = 14; }
     });
+    doc.setFontSize(11);
+    doc.text(`Reading Total Score: ${reading.score}/20`, left, y); y += 10;
+
+    // Essay
+    doc.addPage(); y = 14;
+    doc.setFontSize(12);
+    doc.text("Part 2 — Essay", left, y); y += 8;
+    doc.setFontSize(10);
+    doc.text("Essay text:", left, y); y += 6;
+    const essayText = (document.getElementById('essayText').value || "(No response)").trim();
+    const essayLines = doc.splitTextToSize(essayText, 180);
+    doc.text(essayLines, left, y);
+    y += essayLines.length * 6;
+    if (y > 250) { doc.addPage(); y = 14; }
+    doc.text(`Essay Rubric Scores (Content, Org, Grammar, Mechanics): ${essayRubric.c}, ${essayRubric.o}, ${essayRubric.g}, ${essayRubric.m} — Total: ${essayRubric.total}/10`, left, y);
+    y += 10;
+
+    // Email
+    if (y > 250) { doc.addPage(); y = 14; }
+    doc.setFontSize(12);
+    doc.text("Part 2 — Email", left, y); y += 8;
+    doc.setFontSize(10);
+    doc.text("Email text:", left, y); y += 6;
+    const emailText = (document.getElementById('emailText').value || "(No response)").trim();
+    const emailLines = doc.splitTextToSize(emailText, 180);
+    doc.text(emailLines, left, y);
+    y += emailLines.length * 6;
+    if (y > 250) { doc.addPage(); y = 14; }
+    doc.text(`Email Rubric Scores (Format, Structure, Tone, Grammar): ${emailRubric.f}, ${emailRubric.s}, ${emailRubric.t}, ${emailRubric.g} — Total: ${emailRubric.total}/10`, left, y);
+    y += 12;
+
+    // Summary
+    const overall = reading.score + essayRubric.total + emailRubric.total;
+    doc.addPage(); y = 20;
+    doc.setFontSize(12);
+    doc.text("Summary", left, y); y += 10;
+    doc.setFontSize(11);
+    doc.text(`Reading: ${reading.score}/20`, left, y); y += 6;
+    doc.text(`Essay: ${essayRubric.total}/10`, left, y); y += 6;
+    doc.text(`Email: ${emailRubric.total}/10`, left, y); y += 8;
+    doc.text(`Combined Total: ${overall}/40`, left, y); y += 10;
+
+    // Save PDF with requested filename format
+    const safeName = name.replace(/\s+/g, "_").replace(/[^\w\-_.]/g, '') || "Candidate";
+    const filename = `${safeName}_ReadingWritingTest.pdf`;
+    doc.save(filename);
+
+    // also update on-screen results summary so evaluator sees computed reading & writing totals
+    const readNote = document.getElementById('readingNote');
+    readNote.innerHTML = `<strong>Reading was auto-scored on export.</strong> Reading total (export): ${reading.score}/20. Essay: ${essayRubric.total}/10. Email: ${emailRubric.total}/10. PDF saved as ${filename}.`;
   });
+
   </script>
 </body>
 </html>
