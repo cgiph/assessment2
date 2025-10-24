@@ -3,181 +3,255 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Skilled-Jobs English (Managers) — Reading & Writing Tests</title>
+  <title>Supervisory & Managerial English Test — Reading & Writing</title>
   <style>
-    :root{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;}
-    body{max-width:1000px;margin:28px auto;padding:20px;line-height:1.45;color:#111;background:#fff}
-    header{display:flex;align-items:center;gap:16px;justify-content:space-between}
-    h1{font-size:1.5rem;margin:0}
-    .name-field{font-size:1rem;border:1px solid #cbd5e1;border-radius:8px;padding:6px;width:250px}
-    .level{border:1px solid #e2e8f0;border-radius:10px;padding:16px;margin:18px 0;background:#fbfdff}
-    h2{margin-top:0}
-    .passage{background:#fff;padding:12px;border-radius:8px;border:1px solid #eef2f7;margin-bottom:12px}
-    .question{margin:10px 0;padding:10px;border-left:3px solid #c7d2fe;background:#fcfcff;border-radius:6px}
-    label{display:block;cursor:pointer}
-    .short-answer{width:100%;min-height:48px;padding:8px;border:1px solid #e2e8f0;border-radius:6px}
-    button{background:#2563eb;color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
-    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .result{margin-top:10px;padding:10px;border-radius:8px;background:#f8fafc;border:1px solid #e6eef8}
-    textarea{width:100%;min-height:140px;padding:8px;border-radius:8px;border:1px solid #e6eef8}
-    footer{margin-top:28px;font-size:0.9rem;color:#475569}
+    :root {
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
+    body {
+      max-width: 1000px;
+      margin: 28px auto;
+      padding: 20px;
+      line-height: 1.45;
+      color: #111;
+      background: #fff;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    h1 { font-size: 1.6rem; margin: 0; }
+    .name-field {
+      font-size: 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 6px;
+      width: 250px;
+    }
+    .section {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 18px;
+      margin: 18px 0;
+      background: #fbfdff;
+    }
+    h2 { margin-top: 0; }
+    .passage {
+      background: #fff;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #eef2f7;
+      margin-bottom: 12px;
+    }
+    .question {
+      margin: 8px 0;
+      padding: 10px;
+      border-left: 3px solid #c7d2fe;
+      background: #fcfcff;
+      border-radius: 6px;
+    }
+    label {
+      display: block;
+      cursor: pointer;
+      margin-left: 6px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #e6eef8;
+    }
+    button {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    footer {
+      margin-top: 28px;
+      font-size: 0.9rem;
+      color: #475569;
+    }
+    .result {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      background: #f8fafc;
+      border: 1px solid #e6eef8;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Skilled-Jobs English (Managers) — Reading & Writing</h1>
+    <h1>Supervisory & Managerial English Test — Reading & Writing</h1>
     <div>
       <label><strong>Candidate Name:</strong></label>
-      <input class="name-field" type="text" id="candidateName" placeholder="Write your full name here">
+      <input class="name-field" id="candidateName" placeholder="Write your full name here" />
     </div>
   </header>
 
-  <p><strong>Instructions:</strong> Complete all sections, then click <em>Export Results to PDF</em>. The file will be saved to your device for sending via email or Messenger.</p>
+  <p><strong>Instructions:</strong> Complete all parts. Click <em>Export to PDF</em> when finished. The PDF will include your answers and scores.</p>
 
-  <!-- Reading -->
-  <section class="level">
-    <h2>A1 Reading Test</h2>
-    <div class="passage">John works at a factory. Every day, he wears his safety gloves, boots, goggles, and helmet before welding. He likes his job because he assembles things with his hands.</div>
-    <div class="question"><label>1. What is John's job?</label><input class="short-answer" id="a1q1"></div>
-    <div class="question"><label>2. Why does he wear gloves?</label><input class="short-answer" id="a1q2"></div>
-    <div class="controls"><button id="btnA1">Submit A1 Test</button></div>
-    <div class="result" id="resultA1"></div>
+  <!-- Reading Section -->
+  <section class="section">
+    <h2>Part 1 — Reading Comprehension (20 points)</h2>
+    <p><strong>Topics:</strong> Team Communication, Customer Service, Decision-Making, Team Motivation</p>
+
+    <div id="reading-questions"></div>
+
+    <button id="submitReading">Submit Reading Answers</button>
+    <div class="result" id="readingResult"></div>
   </section>
 
-  <section class="level">
-    <h2>A2 Reading Test</h2>
-    <div class="passage">Maria is a pastry cook in a hotel kitchen. She starts work at 6 a.m. in Western Australia. She prepares dough and bakes bread and cakes for guests. She enjoys learning new recipes from her coworkers.</div>
-    <div class="question"><label>1. Where does Maria work?</label><input class="short-answer" id="a2q1"></div>
-    <div class="question"><label>2. What does Maria enjoy at work?</label><input class="short-answer" id="a2q2"></div>
-    <div class="controls"><button id="btnA2">Submit A2 Test</button></div>
-    <div class="result" id="resultA2"></div>
-  </section>
-
-  <section class="level">
-    <h2>B1 Reading Test</h2>
-    <div class="passage">Liam is a construction site supervisor. His team builds new houses. On a daily basis, he checks safety rules, assigns workers, and ensures equipment is working properly. Good communication is very important in his job.</div>
-    <div class="question"><label>1. What does Liam do everyday?</label><input class="short-answer" id="b1q1"></div>
-    <div class="question"><label>2. Why is communication important in his job?</label><input class="short-answer" id="b1q2"></div>
-    <div class="controls"><button id="btnB1">Submit B1 Test</button></div>
-    <div class="result" id="resultB1"></div>
-  </section>
-
-  <!-- Writing -->
-  <section class="level">
-    <h2>Writing Task: Short Essay</h2>
-    <p>Write your idea about this topic: <strong>why safety is important in your job</strong>. Write at least 80 words.</p>
+  <!-- Writing: Essay -->
+  <section class="section">
+    <h2>Part 2 — Writing Task 1: Essay (10 points)</h2>
+    <p><strong>Topic:</strong> What are the best ways to motivate your team at work? Explain your answer with examples.</p>
     <textarea id="essay"></textarea>
-    <div class="controls"><button id="btnEssay">Submit Essay</button></div>
-    <div class="result" id="resultEssay"></div>
+    <button id="submitEssay">Submit Essay</button>
+    <div class="result" id="essayResult"></div>
   </section>
 
-  <section class="level">
-    <h2>Writing Task: Email</h2>
-    <p>Write an email to your manager to request one day off because you have a personal appointment. Be polite and include the reason and the date.</p>
+  <!-- Writing: Email -->
+  <section class="section">
+    <h2>Part 2 — Writing Task 2: Email (10 points)</h2>
+    <p><strong>Scenario:</strong> Write a professional email to your manager explaining a delay in project submission due to an unexpected issue. Include:  
+      <ul>
+        <li>A clear subject line</li>
+        <li>Polite apology</li>
+        <li>Reason for delay</li>
+        <li>Proposed new deadline</li>
+        <li>Closing and signature</li>
+      </ul>
+    </p>
     <textarea id="email"></textarea>
-    <div class="controls"><button id="btnEmail">Submit Email</button></div>
-    <div class="result" id="resultEmail"></div>
+    <button id="submitEmail">Submit Email</button>
+    <div class="result" id="emailResult"></div>
   </section>
 
   <footer>
     <button id="btnExportPDF">Export Results to PDF</button>
   </footer>
 
-  <!-- ✅ jsPDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <script>
-  document.addEventListener('DOMContentLoaded',()=>{
+  document.addEventListener('DOMContentLoaded', () => {
     const { jsPDF } = window.jspdf;
 
-    const wordsCount=s=>s.trim().split(/\s+/).filter(Boolean).length;
-    const normalize=s=>String(s||'').trim().toLowerCase();
+    const questions = [
+      // Passage 1: Team Communication
+      { q: "Why does Maria hold a short meeting each morning?", opts: ["To assign tasks and review safety issues", "To monitor attendance only", "To discipline her staff", "To discuss salaries"], ans: 0 },
+      { q: "What does Maria do when a problem occurs?", opts: ["She ignores it", "She makes a decision alone", "She encourages discussion", "She reports it immediately"], ans: 2 },
+      { q: "What does Maria check before work begins?", opts: ["If everyone understands their tasks", "If lunch is ready", "If the tools are expensive", "If the workers are late"], ans: 0 },
+      { q: "Which of the following best describes Maria’s leadership?", opts: ["Authoritative", "Communicative and inclusive", "Careless", "Aggressive"], ans: 1 },
+      { q: "What can we learn from Maria’s example?", opts: ["Communication helps teams work safely and effectively", "Supervisors should avoid staff opinions", "Meetings waste time", "Only managers can solve problems"], ans: 0 },
 
-    // Reading scorers
-    const scoreA1=()=> (normalize(a1q1.value).includes('welder')?1:0) + (normalize(a1q2.value).includes('safety')||normalize(a1q2.value).includes('because')?1:0);
-    const scoreA2=()=> (normalize(a2q1.value).includes('australia')?1:0) + (normalize(a2q2.value).includes('learning')?1:0); 
-    const scoreB1=()=> (normalize(b1q1.value).includes('checks')||normalize(b1q1.value).includes('assigns')?1:0)
-                    + (normalize(b1q2.value).includes('communication')||normalize(b1q2.value).includes('team')?1:0);
+      // Passage 2: Customer Service
+      { q: "What problem did the guest have?", opts: ["Missing luggage", "Slow check-in", "Wrong room key", "Late wake-up call"], ans: 1 },
+      { q: "How did James respond to the complaint?", opts: ["He blamed his team", "He ignored the guest", "He apologized and offered coffee", "He argued with the guest"], ans: 2 },
+      { q: "What action did James take afterward?", opts: ["Fired a staff member", "Reminded the team to double-check rooms", "Changed the hotel policy", "Closed the reception early"], ans: 1 },
+      { q: "What does this story show about good customer service?", opts: ["Politeness and quick solutions matter", "Guests should not complain", "Free gifts solve every issue", "Rules are more important than people"], ans: 0 },
+      { q: "What leadership skill did James demonstrate?", opts: ["Blame shifting", "Emotional control and accountability", "Strict enforcement", "Indifference"], ans: 1 },
 
-    // Display results
-    document.getElementById('btnA1').onclick=()=>resultA1.innerHTML=`<strong>Score:</strong> ${scoreA1()}`;
-    document.getElementById('btnA2').onclick=()=>resultA2.innerHTML=`<strong>Score:</strong> ${scoreA2()}`;
-    document.getElementById('btnB1').onclick=()=>resultB1.innerHTML=`<strong>Score:</strong> ${scoreB1()}`;
+      // Passage 3: Decision-Making
+      { q: "What was the problem in Amina’s team?", opts: ["Missing materials", "Argument over machine usage", "Unsafe working area", "Lack of attendance"], ans: 1 },
+      { q: "What did Amina do first?", opts: ["Listened to both sides", "Made a quick decision", "Called higher management", "Ignored the problem"], ans: 0 },
+      { q: "What action helped solve the issue?", opts: ["Assigning clear time slots", "Giving overtime pay", "Avoiding discussions", "Replacing a worker"], ans: 0 },
+      { q: "Why did her workers appreciate her decision?", opts: ["It was fair and based on facts", "It favored one person", "It reduced their workload", "It gave them extra breaks"], ans: 0 },
+      { q: "What skill did Amina show in this case?", opts: ["Effective decision-making and fairness", "Strict rule enforcement", "Emotional detachment", "Delegation"], ans: 0 },
+
+      // Passage 4: Team Motivation
+      { q: "What does Rafael do when his team meets targets?", opts: ["Gives public recognition and small rewards", "Ignores the results", "Reports to HR", "Cuts working hours"], ans: 0 },
+      { q: "How does Rafael respond when results are low?", opts: ["Blames the whole team", "Talks privately to understand problems", "Gives no feedback", "Reduces salaries"], ans: 1 },
+      { q: "Why does Rafael meet the team privately?", opts: ["To find out what went wrong", "To announce bonuses", "To avoid management", "To discuss vacations"], ans: 0 },
+      { q: "What leadership style does Rafael show?", opts: ["Supportive and motivating", "Aggressive", "Passive", "Controlling"], ans: 0 },
+      { q: "What lesson can supervisors learn from Rafael?", opts: ["Recognition and communication motivate staff", "Only money motivates people", "Supervisors should avoid emotions", "Meetings reduce productivity"], ans: 0 },
+    ];
+
+    const container = document.getElementById('reading-questions');
+    questions.forEach((item, i) => {
+      const qDiv = document.createElement('div');
+      qDiv.className = 'question';
+      qDiv.innerHTML = `<p><strong>${i + 1}. ${item.q}</strong></p>`;
+      item.opts.forEach((opt, j) => {
+        qDiv.innerHTML += `<label><input type="radio" name="q${i}" value="${j}"> ${opt}</label>`;
+      });
+      container.appendChild(qDiv);
+    });
+
+    document.getElementById('submitReading').onclick = () => {
+      let score = 0;
+      let answers = [];
+      questions.forEach((q, i) => {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        const ansIndex = sel ? parseInt(sel.value) : -1;
+        answers.push(ansIndex >= 0 ? q.opts[ansIndex] : "(No answer)");
+        if (ansIndex === q.ans) score++;
+      });
+      document.getElementById('readingResult').innerHTML = `<strong>Reading Score:</strong> ${score}/20`;
+      window.readingAnswers = answers;
+      window.readingScore = score;
+    };
 
     // Writing
-    document.getElementById('btnEssay').onclick=()=>{
-      const wc=wordsCount(essay.value);
-      resultEssay.innerHTML=`<strong>Word Count:</strong> ${wc}`;
+    const wordCount = s => s.trim().split(/\s+/).filter(Boolean).length;
+    document.getElementById('submitEssay').onclick = () => {
+      const wc = wordCount(essay.value);
+      document.getElementById('essayResult').innerHTML = `<strong>Word Count:</strong> ${wc}`;
+      window.essayText = essay.value;
     };
-    document.getElementById('btnEmail').onclick=()=>{
-      const wc=wordsCount(email.value);
-      resultEmail.innerHTML=`<strong>Word Count:</strong> ${wc}`;
+    document.getElementById('submitEmail').onclick = () => {
+      const wc = wordCount(email.value);
+      document.getElementById('emailResult').innerHTML = `<strong>Word Count:</strong> ${wc}`;
+      window.emailText = email.value;
     };
 
-    // Writing CEFR evaluator
-    function writingLevel(w){
-      if(w<40)return"Below A1";
-      if(w<40)return"A1";
-      if(w<50)return"A2";
-      if(w<100)return"B1";
-      if(w<200)return"B2";
-      return"C1";
-    }
-
-    function highestReadingLevel(a1,a2,b1){
-      const scores={A1:a1,A2:a2,B1:b1};
-      let highest='A2',max=scores.A2;
-      for(const lvl in scores){if(scores[lvl]>max){max=scores[lvl];highest=lvl;}}
-      return highest;
-    }
-
-    // Export results to PDF (save, not print)
-    document.getElementById('btnExportPDF').addEventListener('click',()=>{
-      const name=document.getElementById('candidateName').value.trim()||'(No name)';
-      const a1=scoreA1(),a2=scoreA2(),b1=scoreB1();
-      const essayW=wordsCount(essay.value),emailW=wordsCount(email.value);
-      const essayL=writingLevel(essayW),emailL=writingLevel(emailW);
-      const readLevel=highestReadingLevel(a1,a2,b1);
-
-      const doc=new jsPDF();
-      let y=20;
-      doc.setFontSize(16);
-      doc.text(`Candidate: ${name}`,10,y);y+=10;
-
+    // Export PDF
+    document.getElementById('btnExportPDF').addEventListener('click', () => {
+      const name = document.getElementById('candidateName').value.trim() || '(No name)';
+      const doc = new jsPDF({ orientation: "p", unit: "mm", format: "a4" });
+      let y = 15;
       doc.setFontSize(14);
-      doc.text('Reading Comprehension',10,y);y+=8;
+      doc.text(`Supervisory & Managerial English Test Results`, 10, y); y += 8;
       doc.setFontSize(12);
-      doc.text(`A1 Score: ${a1}/2`,10,y);y+=6;
-      doc.text(`A2 Score: ${a2}/2`,10,y);y+=6;
-      doc.text(`B1 Score: ${b1}/2`,10,y);y+=8;
-      doc.text(`Highest Reading Level: ${readLevel}`,10,y);y+=12;
+      doc.text(`Candidate: ${name}`, 10, y); y += 8;
+      doc.text(`Date: ${new Date().toLocaleDateString()}`, 10, y); y += 12;
 
-      doc.setFontSize(14);
-      doc.text('Writing Results',10,y);y+=8;
+      doc.text(`Reading Score: ${window.readingScore || 0}/20`, 10, y); y += 8;
+      doc.text("Answers:", 10, y); y += 6;
+
+      (window.readingAnswers || []).forEach((ans, i) => {
+        const line = `${i + 1}. ${ans}`;
+        const split = doc.splitTextToSize(line, 180);
+        doc.text(split, 10, y);
+        y += split.length * 6;
+        if (y > 270) { doc.addPage(); y = 15; }
+      });
+
+      doc.addPage();
+      y = 15;
       doc.setFontSize(12);
-      doc.text(`Essay Word Count: ${essayW} → Level: ${essayL}`,10,y);y+=6;
-      doc.text(`Email Word Count: ${emailW} → Level: ${emailL}`,10,y);y+=10;
+      doc.text("Essay Response:", 10, y); y += 6;
+      const essayLines = doc.splitTextToSize(window.essayText || "(No response)", 180);
+      doc.text(essayLines, 10, y); y += essayLines.length * 6;
 
-      doc.setFontSize(14);
-      doc.text('Overall Summary',10,y);y+=8;
-      doc.setFontSize(12);
-      doc.text(`Reading Level: ${readLevel}`,10,y);y+=6;
-      doc.text(`Writing Level: ${essayL===emailL?essayL:essayL+'/'+emailL}`,10,y);y+=10;
-      doc.text('End of Report',10,y);
+      doc.addPage();
+      y = 15;
+      doc.text("Email Response:", 10, y); y += 6;
+      const emailLines = doc.splitTextToSize(window.emailText || "(No response)", 180);
+      doc.text(emailLines, 10, y); y += emailLines.length * 6;
 
-      const filename=`${name.replace(/\s+/g,'_')||'Candidate'}_Managers_Results.pdf`;
-      doc.save(filename);
+      doc.save(`${name.replace(/\s+/g, '_') || 'Candidate'}_Supervisory_Test.pdf`);
     });
   });
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
